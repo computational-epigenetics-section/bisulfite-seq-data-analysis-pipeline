@@ -2,10 +2,8 @@ library(ggplot2)
 
 #Coveravge file: chromosome", "position", "strand", "methylation percentage", "count methylated", "count unmethylated
 
-C01_HF_jack<-read.csv("./create_plots/jack_chr19/C01_HF_chr19_lane1_bins.csv")
+cor(C01_HF_merge$Avg.Methylation.x,C01_HF_merge$Avg.Methylation.y)
 
-
-plot(C01_HF_jack$Avg.Methylation,CO1_HF$Avg.Methylation)
 
 CO1_HF<-read.csv("./create_plots/C01_HF_1_chr19.bismark.bins.csv")
 ggplot(data=CO1_HF, aes(CO1_HF$Avg.Methylation)) + 

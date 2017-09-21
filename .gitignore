@@ -101,3 +101,7 @@ ENV/
 .mypy_cache/
 
 sanity_check/C01_HF_chr19_1.bismark.cov
+sanity_check/C02_HF_chr19_1.bismark.cov
+sanity_check/C01_PBL_chr19_1.bismark.cov
+sanity_check/C02_PBL_chr19_1.bismark.cov
+.Rhistory

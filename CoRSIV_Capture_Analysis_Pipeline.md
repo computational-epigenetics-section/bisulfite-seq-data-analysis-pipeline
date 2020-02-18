@@ -92,6 +92,44 @@ bismark --multicore 10 -q --temp_dir ./bismark --genome /home/scott/genomes/huma
 
 ```
 
+# Step4: Extract methylation counts over each CpG site
+
+### 4.1 Using Bismark methylation extractor
+This step will extract the methylation information from the Bismark alignment output. bismark_methylation_extractor script operates on Bismark result files and extracts the methylation call for every single C analysed. The position of every single C will be written out to a new output file as follows.
+
+<chromosome> <start position> <end position> <methylation percentage> <count methylated> <count unmethylated>
+    
+    
+To get this coverage file, following parameters were used with the bismark_methylation_extractor script.
+
+
+```bash
+--bedGraph               After finishing the methylation extraction, the methylation output is written into a
+                         sorted bedGraph file that reports the position of a given cytosine and its methylation 
+                         state (in %, see details below).
+                         
+--cytosine_report        After the conversion to bedGraph has completed, the option '--cytosine_report' produces a
+                         genome-wide methylation report for all cytosines in the genome.
+                         
+ 
+
+bismark_methylation_extractor  -p --comprehensive --report --multicore 8 $1 --bedGraph --buffer_size 8G --ample_memory --cytosine_report --gzip --genome_folder /home/scott/genomes/human/gencode
+ 
+```
+
+### 4.2 Coverage to Cytosine
+
+```bash
+
+coverage2cytosine --merge_CpG --genome_folder /home/scott/genomes/human/gencode $1 -o $1.cyt.cov
+```
+
+Starting from the coverage output, the Bismark methylation extractor can optionally also output a
+genome-wide cytosine methylation report. The module coverage2cytosine was run individually to the bedGraph or coverage output so that every cytosine on both the top and bottom strands will be considered irrespective of whether they were actually covered by any reads in the experiment or not
+
+
+
+
 
 ```python
 

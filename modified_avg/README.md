@@ -1,5 +1,7 @@
 # bisulfite-sequence-data-analysis-pipeline
 ### A pipeline to preprocess and analyze bisulfite sequence data.
+
+![Alt text](./pipeline.svg)
 ## STEPS
 
 As a prerequisite, conda (anaconda or miniconda) can be installed. Then the following steps can be run within a [virtual environment](https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/20/conda/) created using conda.

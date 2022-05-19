@@ -1,0 +1,4 @@
+#!/bin/sh
+#SBATCH --time=24:00:00 -n24 -p bynode
+
+coverage2cytosine --merge_CpG --genome_folder '<PATH_TO_REFERENCE_GENOME>' -o  <OUTPUT_COV_FILENAME> <INPUT_COV_FILENAME>

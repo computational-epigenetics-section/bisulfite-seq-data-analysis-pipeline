@@ -1,0 +1,5 @@
+#!/bin/sh
+#SBATCH --time=24:00:00 -n24 -p bynode
+# Splitting for only one BAM file is shown here.
+
+bamtools split -in C01_HF_lane1_pe.bam -reference

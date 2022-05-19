@@ -1,0 +1,4 @@
+#!/bin/sh
+#SBATCH --time=24:00:00 -n24 -p bynode
+
+bismark_methylation_extractor -p --no-overlap --comprehensive --report --multicore 4  --bedGraph  --ample_memory --cytosine_report --genome_folder  '<PATH_TO_REFERENCE_GENOME>' <INPUT_FILE_PATH>

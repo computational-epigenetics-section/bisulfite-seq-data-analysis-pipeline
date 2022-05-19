@@ -1,0 +1,5 @@
+#!/bin/sh
+#SBATCH --time=24:00:00 -n24 -p bynode
+
+bamtools sort -in <INPUT_FILE_PATH> -out <SORTED_FILE_PATH>
+picard CollectInsertSizeMetrics -I  <INPUT_FILE_PATH> -O <INSERT_SIZE_METRICS.txt> -H <INSERT_SIZE_HISTOGRAM_CHART.pdf>

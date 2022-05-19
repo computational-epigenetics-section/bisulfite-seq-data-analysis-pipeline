@@ -1,0 +1,13 @@
+#!/bin/sh
+#SBATCH --time=24:00:00 -n24 -p bynode
+
+for i in 1 2 3 4 5 6 7 8 9
+do
+    trim_galore --paired --trim1 --basename SRR77140${i} --output_dir Trimmed  SRR77140$i_1.fastq SRR77140$i_2.fastq
+done
+
+for i in 10 11 12
+do
+    trim_galore --paired --trim1 --basename SRR7714${i} --output_dir Trimmed  SRR7714${i}_1.fastq SRR7714${i}_2.fastq
+done
+

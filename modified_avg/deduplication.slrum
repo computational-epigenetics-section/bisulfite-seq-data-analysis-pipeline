@@ -1,0 +1,6 @@
+#!/bin/sh
+#SBATCH --time=24:00:00 -n24 -p bynode
+
+bamtools sort -in <INPUT_FILE_PATH> -out <SORTED_FILE_PATH>
+
+picard MarkDuplicates -I T<SORTED_FILE_PATH> -M <PATH_TO_DUPLICATES_REPORT> -O <OUTPUT_FILE_PATH>

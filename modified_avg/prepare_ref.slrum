@@ -1,0 +1,7 @@
+#!/bin/sh
+#SBATCH --time=12:00:00 -n24 -p bynode
+
+# Run the commands in the folder where the reference genome is located.
+#cd <PATH_TO_REFERENCE_GENOME>
+
+bismark_genome_preparation ./
